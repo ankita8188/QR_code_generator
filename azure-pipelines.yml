@@ -15,3 +15,9 @@ steps:
     rootFolderOrFile: '$(build.sourcesDirectory)'
     includeRootFolder: false
 - task: PublishBuildArtifacts@1
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'qr-code'
+    appType: 'webAppLinux'
+    appName: 'ankita-qr-app-a8eqbtbdbpc5fuds'
+    package: '$(Build.ArtifactStagingDirectory)/**/*.zip'
